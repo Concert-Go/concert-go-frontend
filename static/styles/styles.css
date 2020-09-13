@@ -1,0 +1,30 @@
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-size: 62.5%; /* 10px */
+}
+
+body {
+  margin: 0;
+  font-size: 1.6rem; /* 16px */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  font-family: "Titillium Web";
+}
+
+#full-title {
+  color: white;
+  font-size: 8em;
+  opacity: 0.9;
+  font-weight: 600;
+  animation: zoomIn 2s;
+}
+
+#go {
+  font-weight: 300;
+}
