@@ -1,1 +1,1 @@
-web: bin/concert-go
+web:bin/concert-go
