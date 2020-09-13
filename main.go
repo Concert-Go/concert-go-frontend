@@ -20,10 +20,10 @@ func main() {
 
 	r := mux.NewRouter()
 
-	r.NotFoundHandler = http.HandlerFunc(notFound)
+	r.NotFoundHandler = http.HandlerFunc(notFoundHandler)
 
-	// Serve index page on all unhandled routes
-	r.Handle("/", Handler())
+
+	r.Handle("/", routeHandler())
 	r.PathPrefix("/styles/").Handler(http.StripPrefix("/styles/",
 		http.FileServer(http.Dir("static/styles/"))))
 
@@ -31,13 +31,13 @@ func main() {
 
 }
 
-func notFound(w http.ResponseWriter, r *http.Request) {
+func notFoundHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html")
 	w.WriteHeader(http.StatusNotFound)
 	http.ServeFile(w, r, "./static/404.html")
 
 }
 
-func Handler() http.Handler {
+func routeHandler() http.Handler {
 	return http.FileServer(http.Dir("static/"))
 }
