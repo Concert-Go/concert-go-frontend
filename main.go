@@ -14,6 +14,8 @@ func main() {
 
 	if port == "" {
 		port = ":3000"
+	} else {
+		port = ":" + port
 	}
 
 	r := mux.NewRouter()
