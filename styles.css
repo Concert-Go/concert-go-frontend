@@ -22,6 +22,7 @@ body {
   font-size: 8em;
   opacity: 0.9;
   font-weight: 600;
+  animation: zoomIn 2s;
 }
 
 #go {
